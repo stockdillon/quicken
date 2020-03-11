@@ -1,0 +1,89 @@
+<!-- <mat-card>
+  <form class="example-form" [formGroup]="userDetails">
+    <div class="row">
+      <div class="col-6">
+        <mat-form-field class="example-full-width">
+          <mat-label>First Name</mat-label>
+          <input matInput placeholder="First Name" name="firstName" [(ngModel)]="firstName" #firstNameRef="ngModel">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <mat-form-field class="example-full-width">
+          <mat-label>Last Name</mat-label>
+          <input matInput name="lastName" [formControl]="nameControl">
+        </mat-form-field>
+      </div>
+    </div>
+    <button>submit</button>
+  </form>
+</mat-card> -->
+
+<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+  <div class="toast-header">
+    <img src="..." class="rounded mr-2" alt="...">
+    <strong class="mr-auto">Bootstrap</strong>
+    <small class="text-muted">just now</small>
+    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="toast-body">
+    See? Just like this.
+  </div>
+</div>
+
+<mat-card>
+  <form class="example-form" [formGroup]="userDetails">
+    <div class="row">
+      <div class="col">
+        <mat-form-field class="example-full-width">
+          <mat-label>First Name</mat-label>
+          <input matInput placeholder="Home owner" name="firstName" formControlName="firstName" required>
+        </mat-form-field>
+        <div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" class="alert alert-danger invalid-form-error">
+          <div *ngIf="firstName.errors.required">
+            Name is required.
+          </div>
+          <div *ngIf="firstName.errors.maxlength">
+            Name can not be more than 30 characters long
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <mat-form-field class="example-full-width">
+          <mat-label>Last Name</mat-label>
+          <input matInput name="lastName" formControlName="lastName">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <mat-form-field class="example-full-width">
+          <mat-label>Credit Score</mat-label>
+          <input matInput name="creditScore" formControlName="creditScore">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <mat-form-field class="example-full-width">
+          <mat-label>Annual Income</mat-label>
+          <input matInput name="annualIncome" formControlName="annualIncome" required>
+        </mat-form-field>
+        <div *ngIf="annualIncome.invalid && (annualIncome.dirty || annualIncome.touched)" class="alert alert-danger invalid-form-error">
+          <div *ngIf="annualIncome.errors.required">
+            Income is required.
+          </div>
+          <div *ngIf="annualIncome.errors.min">
+            Income must be greater than 0.
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-primary">submit</button>
+  </form>
+</mat-card>
