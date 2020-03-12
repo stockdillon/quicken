@@ -6,6 +6,7 @@ import {
   Validators
 } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { nameValidator } from 'src/app/directives/name-validator.directive';
 
 @Component({
   selector: 'app-rocket-component',
@@ -25,7 +26,7 @@ export class RocketComponentComponent implements OnInit {
 
   @Output()
   userDetails = this.fb.group({
-    firstName: ['Dillon', [Validators.required, Validators.maxLength(30)]],
+    firstName: ['Dillon', [Validators.required, Validators.maxLength(30), nameValidator()]],
     lastName: ['Stock'],
     creditScore: ['800'],
     annualIncome: ['1000000', [Validators.min(1)]]
