@@ -5,6 +5,7 @@ import {
   FormBuilder,
   Validators
 } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-rocket-component',
@@ -32,6 +33,7 @@ export class RocketComponentComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
+    private toastr: ToastrService
     // private toastr
   ) {}
 
@@ -49,5 +51,9 @@ export class RocketComponentComponent implements OnInit {
 
   get annualIncome() {
     return this.userDetails.get('annualIncome');
+  }
+
+  toast(): void {
+    this.toastr.info('testing toastr');
   }
 }

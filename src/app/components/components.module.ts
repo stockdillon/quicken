@@ -1,3 +1,4 @@
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MaterialModule } from './../material/material.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -23,6 +24,7 @@ import { LoanOptionComponent } from './loan-options/loan-option/loan-option.comp
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
+    NgbModule,
   ],
   exports: [
     WelcomeComponent,
