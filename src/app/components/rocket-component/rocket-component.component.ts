@@ -28,13 +28,13 @@ export class RocketComponentComponent implements OnInit {
   userDetails = this.fb.group({
     firstName: ['Dillon', [Validators.required, Validators.maxLength(30), nameValidator()]],
     lastName: ['Stock'],
-    creditScore: ['800'],
-    annualIncome: ['1000000', [Validators.min(1)]]
+    creditScore: [800],
+    annualIncome: [1000000, [Validators.min(1)]]
   });
 
   constructor(
     private fb: FormBuilder,
-    private toastr: ToastrService
+    // private toastr: ToastrService
     // private toastr
   ) {}
 
@@ -50,11 +50,16 @@ export class RocketComponentComponent implements OnInit {
     return this.userDetails.get('lastName');
   }
 
+  get creditScore() {
+    return this.userDetails.get('creditScore');
+  }
+
+
   get annualIncome() {
     return this.userDetails.get('annualIncome');
   }
 
   toast(): void {
-    this.toastr.info('testing toastr');
+    // this.toastr.info('testing toastr');
   }
 }
