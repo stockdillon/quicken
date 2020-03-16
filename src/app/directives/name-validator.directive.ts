@@ -28,6 +28,11 @@ export function nameValidator(): ValidatorFn {
     // return forbidden ? {'forbiddenName': {value: control.value}} : null;
     console.log('validating!');
     console.log(control.value);
-    return {validName: true};
+    if (control.value === 'Error') {
+      // alert('test');
+      return {validName: true};
+    } else {
+      return {validName: false};
+    }
   };
 }
